@@ -125,7 +125,7 @@ pipeline {
                    dir("eks_module")
                    { 
                     sh('terraform init')
-                    sh('terraform plan -var "access_key=$ACCESS_KEY" -var "secret_key=$SECRET_KEY" -var "region=${params.Region}" --var-file=./config/terraform.tfvars')
+                    sh('terraform plan -var 'access_key=${ACCESS_KEY}' -var 'secret_key=${SECRET_KEY}' -var 'region=${params.Region}'' --var-file=./config/terraform.tfvars')
                     sh('terraform apply -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars --auto-approve')
                     
                    }
