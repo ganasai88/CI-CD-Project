@@ -1,9 +1,11 @@
 @Library('Jenkins-shared-library') _
 
 pipeline {
+
     agent any
 
-    parameters{
+    parameters
+    {
         choice(name: 'action', choices: 'create\ndelete', description: 'choose create/Destroy')
         string(name: 'aws_account_id', description: " AWS Account ID", defaultValue: '910931000749')
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javaapp')
@@ -120,14 +122,12 @@ pipeline {
               when{expression{params.action == "create"}}       
             steps{
                script{
-                   
                    dir("eks_module")
-                   {
-                    sh """ 
-                          terraform init 
-                          terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars
-                          terraform apply -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars --auto-approve
-                      """
+                   { 
+                    sh    "terraform init" 
+                    sh    "terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars"
+                          "terraform apply -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars --auto-approve"
+                    
                    }
                }   
             }
