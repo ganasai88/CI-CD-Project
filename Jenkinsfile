@@ -14,13 +14,13 @@ pipeline {
         string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'ganasai88')
         string(name: 'cluster', description: "name of the EKS Cluster", defaultValue: 'demo-cluster1')
     }
-
+/* 
     environment{
 
         ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
         SECRET_KEY = credentials('AWS_SECRET_KEY_ID')
     }
-    
+    */
     stages{
          
         stage('Git Checkout'){
