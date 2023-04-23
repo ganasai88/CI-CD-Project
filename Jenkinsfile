@@ -42,7 +42,7 @@ pipeline {
                }
             }
         }
-       /*
+       
         stage('Integration Test maven'){
               when{expression{params.action == "create"}}       
             steps{
@@ -52,6 +52,7 @@ pipeline {
                }
             }
         }
+        /*
          stage('Static Code Analysis: Sonarqube'){
                when{expression{params.action == "create"}}      
             steps{
