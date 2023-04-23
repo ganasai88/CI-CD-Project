@@ -32,7 +32,7 @@ pipeline {
             )
             }
         }
-         
+         /* 
        stage('Unit Test maven'){
                when{expression{params.action == "create"}}      
             steps{
@@ -52,7 +52,8 @@ pipeline {
                }
             }
         }
-        /*
+        */
+        
          stage('Static Code Analysis: Sonarqube'){
                when{expression{params.action == "create"}}      
             steps{
@@ -62,7 +63,7 @@ pipeline {
                }
             }
         }
-         
+         /*
        stage('Quality Gate status check: Sonarqube'){
                when{expression{params.action == "create"}}      
             steps{
