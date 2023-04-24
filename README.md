@@ -1,3 +1,5 @@
+![Pipeline (1)](https://user-images.githubusercontent.com/39452579/233925555-ea8327e3-66d1-42e8-9d67-323555073773.jpg)
+
 # kubernetes-configmap-reload
 
 Pre-requisites:
