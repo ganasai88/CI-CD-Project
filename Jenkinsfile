@@ -137,6 +137,7 @@ pipeline {
                }   
             }
         }
+        
         /*
         stage('Connect to EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
