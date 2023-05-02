@@ -14,13 +14,13 @@ pipeline {
         string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'ganasai88')
         string(name: 'cluster', description: "name of the EKS Cluster", defaultValue: 'demo-cluster1')
     }
-/* 
+ 
     environment{
 
         ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
         SECRET_KEY = credentials('AWS_SECRET_KEY_ID')
     }
-    */
+   
     stages{
          
         stage('Git Checkout'){
@@ -82,7 +82,7 @@ pipeline {
                }
             }
         }
-         */
+         
          
         stage('Docker Image Build'){
               when{expression{params.action == "create"}}       
@@ -120,7 +120,8 @@ pipeline {
                }
             }
         }
-       /*
+        */
+       
         stage('Create EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
             steps{
@@ -136,6 +137,7 @@ pipeline {
                }   
             }
         }
+        /*
         stage('Connect to EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
             steps{
