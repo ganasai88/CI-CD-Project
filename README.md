@@ -1,3 +1,5 @@
+![Pipeline (1)](https://user-images.githubusercontent.com/39452579/233925555-ea8327e3-66d1-42e8-9d67-323555073773.jpg)
+
 # kubernetes-configmap-reload
 
 Pre-requisites:
@@ -9,8 +11,8 @@ Pre-requisites:
     
 Clone code from github:
 -------
-    git clone https://github.com/vikash-kumar01/spring-cloud-kubernetes.git
-    cd spring-cloud-kubernetes/kubernetes-configmap-reload
+    git clone https://github.com/ganasai88/CI-CD-Project.git
+    cd CI-CD-Project
     
 Build Maven Artifact:
 -------
@@ -18,7 +20,7 @@ Build Maven Artifact:
  
 Build Docker image for Springboot Application
 --------------
-    docker build -t vikashashoke/kubernetes-configmap-reload .
+    docker build -t dockerhubuserid/imagename
   
 Docker login
 -------------
@@ -26,11 +28,11 @@ Docker login
     
 Push docker image to dockerhub
 -----------
-    docker push vikashashoke/kubernetes-configmap-reload
+    docker push dockerhubuserid/imagename
     
 Deploy Spring Application:
 --------
-    kubectl apply -f kubernetes-configmap.yml
+    kubectl apply -f .
     
 Check Deployments, Pods and Services:
 -------
@@ -41,13 +43,9 @@ Check Deployments, Pods and Services:
     
 Now Goto Loadbalancer and check whether service comes Inservice or not, If it comes Inservice copy DNS Name of Loadbalancer and Give in WebUI
 
-    http://a70a89c22e06f49f3ba2b3270e974e29-1311314938.us-west-2.elb.amazonaws.com:8080/home/data
-    
-![2](https://user-images.githubusercontent.com/63221837/82123471-44f5f300-97b7-11ea-9d10-438cf9cc98a0.png)
-
+ 
 Now we can cleanup by using below commands:
 --------
     kubectl delete deploy kubernetes-configmap-reload
     kubectl delete svc kubernetes-configmap-reload
-# springboot_k8s_application
-# mrdevops_java_app
+
