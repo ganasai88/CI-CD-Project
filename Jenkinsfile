@@ -138,7 +138,7 @@ pipeline {
             }
         }
         
-        /*
+        
         stage('Connect to EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
             steps{
@@ -152,6 +152,7 @@ pipeline {
                }   
             }
         }
+        /*
         stage('Deployment of EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
             steps{
