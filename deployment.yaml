@@ -16,7 +16,7 @@ spec:
       - name: myjavaapp
         image: ganasai88/javaapp:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -29,5 +29,5 @@ spec:
   ports:
   - name: http
     port: 80
-    targetPort: 8000
+    targetPort: 8080
   type: LoadBalancer
